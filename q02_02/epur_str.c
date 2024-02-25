@@ -1,36 +1,79 @@
 #include <unistd.h>
+#include <stdio.h>
+
+// another solution
+// int	main(int argc, char *argv[])
+// {
+// 	char	*org;
+// 	int		i;
+// 	int		j;
+// 	int		t;
+
+// 	i = 0;
+// 	j = 0; //is there anything written yet?
+// 	t = 0; //is there a tab or space?
+// 	org = argv[1];
+// 	if (argc ==2)
+// 	{
+// 		while (org[i] != '\0')
+// 		{
+// 			if (org[i] == ' ' || org[i] == '\t')
+// 				t = 1;
+// 			else
+// 			{
+// 				if (j == 1 && t == 1)
+// 					write (1, " ", 1);
+// 				j = 1;
+// 				t = 0;
+// 				write (1, &org[i], 1);
+// 			}
+// 			i++;
+// 		}
+// 	}
+// 	write(1, "\n", 1);
+// 	return (0);
+// }
 
 int	main(int argc, char *argv[])
 {
-	char	*org;
-	int		i;
-	int		j;
-	int		t;
+	int	i;
+	int	j;
+	char *str;
 
-	i = 0;
-	j = 0; //is there anything written yet?
-	t = 0; //is there a tab or space?
-	org = argv[1];
-	if (argc ==2)
+	if (argc == 2)
 	{
-		while (org[i] != '\0')
-		{
-			if (org[i] == ' ' || org[i] == '\t')
-				t = 1;
-			else
-			{
-				if (j == 1 && t == 1)
-					write (1, " ", 1);
-				j = 1;
-				t = 0;
-				write (1, &org[i], 1);
-			}
+		i = 0;
+		str = argv[1];
+		while (str[i] && (str[i] == '\t' || str[i] == ' '))
 			i++;
+		j = 0;
+		while (str[i])
+		{
+			while (str[i] && str[i] != '\t' && str[i] != ' ')
+			{
+				if (j == 1)
+				{
+					write(1, " ", 1);
+					j = 0;
+				}
+				write(1, &str[i], 1);
+				i++;
+			}
+			while (str[i] && (str[i] == '\t' || str[i] == ' '))
+			{
+				j = 1;
+				i++;
+			}
 		}
+		write (1, "\n", 1);
 	}
-	write(1, "\n", 1);
+	else
+		write (1, "\n", 1);
 	return (0);
 }
+
+
+
 
 // Assignment name  : epur_str
 // Expected files   : epur_str.c
@@ -68,3 +111,4 @@ int	main(int argc, char *argv[])
 // $> ./epur_str "" | cat -e
 // $
 // $>
+
