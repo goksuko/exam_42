@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-//bence dogru, ayni ciktiyi veriyor ama sistem kabul etmiyor
-
 int	ft_atoi_base(const char *str, int str_base)
 {
 	int		sign;
@@ -42,11 +40,11 @@ int	ft_atoi_base(const char *str, int str_base)
 	return (nb * sign);
 }
 
-int main()
-{
-	printf("%d\n", ft_atoi_base("Ceci permet de decouvrir le fonctionnement de ton ft_atoi_base", 16));
-	return (0);
-}
+// int main()
+// {
+// 	printf("%d\n", ft_atoi_base("Ceci permet de decouvrir le fonctionnement de ton ft_atoi_base", 16));
+// 	return (0);
+// }
 
 // Assignment name  : ft_atoi_base
 // Expected files   : ft_atoi_base.c

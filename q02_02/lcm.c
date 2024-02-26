@@ -19,51 +19,73 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 	}
 }
 
-// //below passes but nit unsigned int
+unsigned int	lcm2(unsigned int a, unsigned int b)
+{
+	unsigned int n;
 
-// int    lcm(int a, int b)
-// {
-// 	int i;
-// 	int j;
-// 	int result;
+	n = 1;
+	while (1)
+	{
+		if (a * n % b == 0)
+			return (a * n);
+		n++;
+	}
+}
 
-// 	i = 2;
-// 	result = 1;
-// 	j = 0;
-// 	if (a <= 0 || b <= 0)
-// 		return (0);
-// 	if (a == 1)
-// 		return (b);
-// 	if (b == 1)
-// 		return (a);
-// 	while (a >= i && b >= i)
-// 	{
-// 		if (j != 0)
-// 			i = j;		
-// 		if (a % i == 0 || b % i == 0)
-// 		{
-// 			j = i;
-// 			if (a % i == 0)
-// 				a = a / i;
-// 			if (b % i == 0)
-// 				b = b / i;
-// 			result = result * i;
-// 		}
-// 		else
-// 			j = 0;
-// 		i++;
-// 	}
-// 	if (a != 1)
-// 		result = result * a;
-// 	if (b != 1)
-// 		result = result * b;	
-// 	return (result);
-// }
+unsigned int    lcm3(unsigned int a, unsigned int b)
+{
+	unsigned int i;
+	unsigned int j;
+	unsigned int result;
+
+	i = 2;
+	result = 1;
+	j = 0;
+	if (a <= 0 || b <= 0)
+		return (0);
+	if (a == 1)
+		return (b);
+	if (b == 1)
+		return (a);
+	while (a >= i && b >= i)
+	{
+		if (j != 0)
+			i = j;		
+		if (a % i == 0 || b % i == 0)
+		{
+			j = i;
+			if (a % i == 0)
+				a = a / i;
+			if (b % i == 0)
+				b = b / i;
+			result = result * i;
+		}
+		else
+			j = 0;
+		i++;
+	}
+	if (a != 1)
+		result = result * a;
+	if (b != 1)
+		result = result * b;	
+	return (result);
+}
 
 
 // int main()
 // {
 // 	printf("%d\n", lcm(15, 30));
+// 	printf("%d\n", lcm(15, 31));
+// 	printf("%d\n", lcm(15, 32));
+// 	printf("%d\n", lcm(15, 33));
+// 	printf("%d\n", lcm2(15, 30));
+// 	printf("%d\n", lcm2(15, 31));
+// 	printf("%d\n", lcm2(15, 32));
+// 	printf("%d\n", lcm2(15, 33));
+// 	printf("%d\n", lcm3(15, 30));
+// 	printf("%d\n", lcm3(15, 31));
+// 	printf("%d\n", lcm3(15, 32));
+// 	printf("%d\n", lcm3(15, 33));
 // 	return (0);
 // }
 

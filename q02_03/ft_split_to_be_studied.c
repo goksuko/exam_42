@@ -1,17 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int	count_word_nb(char *str)
+static int	count_word_nb(char *str)
 {
 	int	i;
 	int	s;
@@ -22,22 +12,17 @@ int	count_word_nb(char *str)
 		i++;
 	while (str[i])
 	{
-		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
-		{
-			i++;
-		}
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != '\0')
 		{
 			i++;
 			s++;
-			while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+			while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != '\0')
 				i++;
 		}
+		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+			i++;
 	}
-	i--;
-	if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-		s--;
-	return (s + 1);
+	return (s);
 }
 
 void fill_matrix(char *str, char **matrix)
@@ -63,36 +48,55 @@ void fill_matrix(char *str, char **matrix)
 			i++;
 			k++;
 		}
-		matrix[t] = malloc(sizeof(char) * k + 1);
+		matrix[t] = malloc(sizeof(char) * k);
 		if (matrix[t] == NULL)
 			return ;
+		matrix[t][k] = '\0';
 		k = 0;
-		while (str[j] != ' ' && str[j] != '\t' && str[j] != '\n' && str[i])
+		while (str[j] != ' ' && str[j] != '\t' && str[j] != '\n' && str[j])
 		{
 			printf("loop i: %d, j: %d, k: %d, t: %d\n", i, j, k, t);
 			matrix[t][k] = str[j];
-			printf("matrix[%d][%d] = str[%d]\n", t, k, j);
+			printf("matrix[%d][%d] (%c) = str[%d] (%c)\n", t, k, matrix[t][k], j, str[j]);
 			j++;
 			k++;
 		}
-		matrix[t][k] = '\0';
+		printf("matrix[%d][%d] (%c) = null character \n", t, k, matrix[t][k]);
 		k = 0;
 		t++;
 	}
 }
 
-char    **ft_split(char *str)
+static char    **ft_split(char *str)
 {
 	char **matrix;
 	int	s;
 
 	s = count_word_nb(str);
+	printf("s: %d\n", s);
 	matrix = malloc(sizeof(char) * s + 1);
 	if (matrix == NULL)
 		return (NULL);
-	matrix[s] = '\0';
+	matrix[s] = NULL;
+	printf("matrix[s]: %s\n", matrix[s]);
+
 	fill_matrix(str, matrix);
 	return(matrix);
+}
+
+void free_matrix(char **matrix)
+{
+	int i;
+
+	i = 0;
+	while (matrix[i])
+	{
+		free(matrix[i]);
+		matrix[i] = NULL;
+		i++;
+	}
+	free(matrix);
+	matrix = NULL;
 }
 
 int main()
@@ -101,15 +105,18 @@ int main()
 	char *str;
 	int	i;
 
-	str = "		 life is beautiful!	and sometimes 	hard!   ";
+	// str = "  life is beautiful!	and sometimes 	hard!   ";
+	str = "life";
 	i = 0;
 	matrix = ft_split(str);
 	printf("org: \"%s\"\n", str);
+	printf("matrix[1][0]: \"%c\"\n", matrix[1][0]);
 	while (*matrix[i])
 	{
 		printf("matrix[%d] = %s\n", i, matrix[i]);
 		i++;
 	}
+	// free_matrix(matrix);
 	return (0);
 }
 
