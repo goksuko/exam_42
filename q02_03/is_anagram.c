@@ -1,3 +1,58 @@
+#include <stdio.h>
+
+int is_anagram(char *a, char *b)
+{
+    int array[255] = {0};
+    int i;
+
+    i = 0;
+    while(a[i])
+    {
+        array[a[i]] += 1;
+        i++;
+    }
+    i = 0;
+    while(b[i])
+    {
+        array[b[i]] -= 1;
+        i++;
+    }
+    i = 0;
+    while (i < 255)
+    {
+        if(array[i] != 0)
+            return (0);
+        else
+            i++;
+    }
+    return(1);
+}
+
+int main()
+{
+    char *a = "abca";
+    char *b = "bcaa";
+
+    a = ".123?.";
+    b = "?321..";
+
+    printf("%d\n", is_anagram(a, b));
+    return (0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // #include <stdio.h>
 
 // int        is_anagram(char *a, char *b)
