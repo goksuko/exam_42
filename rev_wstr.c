@@ -1,90 +1,91 @@
-// #include <unistd.h>
-// #include <stdlib.h>
-// #include <stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-// int main(int argc, char *argv[])
-// {
-// 	int i;
-// 	int a;
-// 	int b;
-// 	int wrt;
-// 	char **str;
+int	ft_strlen(char *str)
+{
+	int	i;
 
-// 	i = 0;
-// 	printf("test");
-// 	while(argv[1][i])
-// 		i++;
-// 	str = malloc(sizeof(char) * i + 1);
-// 	if (str == NULL)
-// 		return 0;
-// 	a = 0;
-// 	b = 0;
-// 	wrt = 0;
-// 	printf("test");
-// 	if (argc == 2)
-// 	{
-// 		i = 0;
-// 		while(argv[1][i])
-// 		{
-// 			if (argv[1][i] == ' ')
-// 			{
-// 				str[a][b] = '\0';
-// 				a++;
-// 				b = 0;
-// 			}
-// 			str[a][b] = argv[1][i];
-// 			i++;
-// 		}
-// 		str[a][b] = '\0';
-// 		while (a >= 0)
-// 		{
-// 			b = 0;
-// 			while (str[a][b])
-// 			{
-// 				write(1, &str[a][b], 1);
-// 				b++;
-// 			}
-// 			a--;
-// 			if (wrt == 1)
-// 				write (1, " ", 1);
-// 			wrt = 1;
-// 		}
-// 	}
-// 	write(1, "\n", 1);
-// 	free(str);
-// 	return (0);
-// }
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
+int	main(int argc, char *argv[])
+{
+	int		i;
+	int		start;
+	char	*str;
+	int		len;
 
+	if (argc != 2)
+	{
+		write(1, "\n", 1);
+		return (0);
+	}
+	str = argv[1];
+	len = ft_strlen(str);
+	if (len == 0)
+	{
+		write(1, "\n", 1);
+		return (0);
+	}
+	i = len - 1;
+	while (i--)
+	{
+		if (str[i] == ' ' || str[i] == '\t')
+		{
+			start = i + 1;
+			while (str[start] != ' ' && str[start] != '\t' && start < len)
+			{
+				write(1, &str[start], 1);
+				start++;
+			}
+			write(1, " ", 1);
+		}
+	}
+	start = 0;
+	while (str[start] != ' ' && str[start] != '\t' && start < len)
+	{
+		write(1, &str[start], 1);
+		start++;
+	}
+	write(1, "\n", 1);
+	return (0);
+}
 
+// Assignment name  : rev_wstr
+// Expected files   : rev_wstr.c
+// Allowed functions: write, malloc, free
+// --------------------------------------------------------------------------------
 
+// Write a program that takes a string as a parameter, and prints its words in
+// reverse order.
 
-// // Assignment name  : rev_wstr
-// // Expected files   : rev_wstr.c
-// // Allowed functions: write, malloc, free
-// // --------------------------------------------------------------------------------
+// A "word" is a part of the string bounded by spaces and/or tabs, or the
+// begin/end of the string.
 
-// // Write a program that takes a string as a parameter, and prints its words in 
-// // reverse order.
+// If the number of parameters is different from 1, the program will display
+// '\n'.
 
-// // A "word" is a part of the string bounded by spaces and/or tabs, or the 
-// // begin/end of the string.
+// In the parameters that are going to be tested,
+// there will not be any "additional"
+// spaces (meaning that there will not be additionnal spaces at the beginning or at
+// the end of the string,
+// and words will always be separated by exactly one space).
 
-// // If the number of parameters is different from 1, the program will display 
-// // '\n'.
+// Examples:
 
-// // In the parameters that are going to be tested, there will not be any "additional" 
-// // spaces (meaning that there will not be additionnal spaces at the beginning or at 
-// // the end of the string, and words will always be separated by exactly one space).
-
-// // Examples:
-
-// // $> ./rev_wstr "You hate people! But I love gatherings. Isn't it ironic?" | cat -e
-// // ironic? it Isn't gatherings. love I But people! hate You$
-// // $>./rev_wstr "abcdefghijklm"
-// // abcdefghijklm
-// // $> ./rev_wstr "Wingardium Leviosa" | cat -e
-// // Leviosa Wingardium$
-// // $> ./rev_wstr | cat -e
-// // $
-// // $>
+// $> ./rev_wstr "You hate people! But I love gatherings. Isn't it ironic?" | cat
+// -e
+// ironic? it Isn't gatherings. love I But people! hate You$
+// $>./rev_wstr "abcdefghijklm"
+// abcdefghijklm
+// $> ./rev_wstr "Wingardium Leviosa" | cat -e
+// Leviosa Wingardium$
+// $> ./rev_wstr | cat -e
+// $
+// $>
