@@ -1,5 +1,17 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   str_capitalizer.c                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:13 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:45:15 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <unistd.h>
 
 int	main(int argc, char *argv[])
 {
@@ -22,13 +34,15 @@ int	main(int argc, char *argv[])
 				if (argv[j][i] == ' ' || argv[j][i] == '\t')
 				{
 					write(1, &argv[j][i], 1);
-					if (argv[j][i + 1] && argv[j][i + 1] <= 'z' && argv[j][i + 1] >= 'a')
+					if (argv[j][i + 1] && argv[j][i + 1] <= 'z' && argv[j][i
+						+ 1] >= 'a')
 					{
 						argv[j][i + 1] -= 32;
 						write(1, &argv[j][i + 1], 1);
 						i++;
 					}
-					else if (argv[j][i + 1] && argv[j][i + 1] <= 'Z' && argv[j][i + 1] >= 'A')
+					else if (argv[j][i + 1] && argv[j][i + 1] <= 'Z'
+						&& argv[j][i + 1] >= 'A')
 					{
 						write(1, &argv[j][i + 1], 1);
 						i++;
@@ -47,12 +61,10 @@ int	main(int argc, char *argv[])
 			write(1, "\n", 1);
 		}
 	}
-	else 
+	else
 		write(1, "\n", 1);
 	return (0);
 }
-
-
 
 // Assignment name  : str_capitalizer
 // Expected files   : str_capitalizer.c
@@ -76,7 +88,8 @@ int	main(int argc, char *argv[])
 // $
 // $> ./str_capitalizer "a FiRSt LiTTlE TESt" | cat -e
 // A First Little Test$
-// $> ./str_capitalizer "__SecONd teST A LITtle BiT   Moar comPLEX" "   But... This iS not THAT COMPLEX" "     Okay, this is the last 1239809147801 but not    the least    t" | cat -e
+// $> ./str_capitalizer "__SecONd teST A LITtle BiT   Moar comPLEX" "   But... This iS not THAT COMPLEX" "     Okay,
+	this is the last 1239809147801 but not    the least    t" | cat -e
 // __second Test A Little Bit   Moar Complex$
 //    But... This Is Not That Complex$
 //      Okay, This Is The Last 1239809147801 But Not    The Least    T$

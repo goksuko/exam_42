@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   first_word.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:40 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:45:43 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 int	main(int argc, char *argv[])
 {
-	char 	*org;
+	char	*org;
 	int		i;
 
 	org = argv[1];
@@ -29,20 +41,23 @@ int	main(int argc, char *argv[])
 // Allowed functions: write
 // --------------------------------------------------------------------------------
 
-// Write a program that takes a string and displays its first word, followed by a
+// Write a program that takes a string and displays its first word,
+	followed by a
 // newline.
 
 // A word is a section of string delimited by spaces/tabs or by the start/end of
 // the string.
 
-// If the number of parameters is not 1, or if there are no words, simply display
+// If the number of parameters is not 1, or if there are no words,
+	simply display
 // a newline.
 
 // Examples:
 
 // $> ./first_word "FOR PONY" | cat -e
 // FOR$
-// $> ./first_word "this        ...       is sparta, then again, maybe    not" | cat -e
+// $> ./first_word "this        ...       is sparta, then again,
+	maybe    not" | cat -e
 // this$
 // $> ./first_word "   " | cat -e
 // $

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   snake_to_camel.c                                   :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:42:44 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:42:46 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	char *str;
-	int	i;
+	char	*str;
+	int		i;
 
 	if (argc == 2)
 	{
@@ -24,8 +36,6 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-
-
 // Assignment name  : snake_to_camel
 // Expected files   : snake_to_camel.c
 // Allowed functions: malloc, free, realloc, write
@@ -34,7 +44,8 @@ int main(int argc, char *argv[])
 // Write a program that takes a single string in snake_case format
 // and converts it into a string in lowerCamelCase format.
 
-// A snake_case string is a string where each word is in lower case, separated by
+// A snake_case string is a string where each word is in lower case,
+	separated by
 // an underscore "_".
 
 // A lowerCamelCase string is a string where each word begins with a capital letter

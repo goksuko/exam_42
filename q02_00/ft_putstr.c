@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_putstr.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:47 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:46:20 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putstr(char *str)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -11,7 +23,6 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
-
 
 // Assignment name  : ft_putstr
 // Expected files   : ft_putstr.c

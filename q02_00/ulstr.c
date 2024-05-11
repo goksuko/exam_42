@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ulstr.c                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:46:28 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:46:29 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 int main(int argc, char *argv[])
 {
 	char *str;
 	int i;
-	
+
 	if (argc == 2)
 	{
 		str = argv[1];
@@ -16,7 +28,7 @@ int main(int argc, char *argv[])
 			else if (str[i] >= 'A' && str[i] <= 'Z' )
 				str[i] = str[i] + 32;
 			write(1, &str[i], 1);
-			i++;			
+			i++;
 		}
 	}
 	write(1, "\n", 1);

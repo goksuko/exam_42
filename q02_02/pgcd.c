@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   pgcd.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:01 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:45:03 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
 int	ft_atoi(char *str)
 {
-	int nb;
-	int i;
+	int	nb;
+	int	i;
 
 	nb = 0;
 	i = 0;
@@ -17,11 +28,11 @@ int	ft_atoi(char *str)
 	return (nb);
 }
 
-int	main (int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int	nb1;
-	int nb2;
-	int i;
+	int	nb2;
+	int	i;
 
 	if (argc == 3)
 	{
@@ -31,11 +42,11 @@ int	main (int argc, char *argv[])
 		while (i--)
 		{
 			if (nb1 % i == 0 && nb2 % i == 0)
-				break;
+				break ;
 		}
 		printf("%d", i);
 	}
-	printf ("\n");
+	printf("\n");
 	return (0);
 }
 
@@ -60,7 +71,7 @@ int	main (int argc, char *argv[])
 // 6$
 // $> ./pgcd 14 77 | cat -e
 // 7$
-// $> ./pgcd 17 3 | cat -e 
+// $> ./pgcd 17 3 | cat -e
 // 1$
 // $> ./pgcd | cat -e
 // $

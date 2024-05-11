@@ -1,6 +1,17 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_rrange.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:44:48 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:44:50 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
 
 // nicer
 // int		absolute_value(int n);
@@ -30,11 +41,11 @@
 // 	return (array);
 // }
 
-int     *ft_rrange(int start, int end)
+int	*ft_rrange(int start, int end)
 {
 	int	total;
-	int *array;
-	int i;
+	int	*array;
+	int	i;
 
 	total = end - start;
 	if (total < 0)
@@ -92,7 +103,8 @@ int     *ft_rrange(int start, int end)
 
 // int     *ft_rrange(int start, int end);
 
-// It must allocate (with malloc()) an array of integers, fill it with consecutive
+// It must allocate (with malloc()) an array of integers,
+	fill it with consecutive
 // values that begin at end and end at start (Including start and end !), then
 // return a pointer to the first value of the array.
 

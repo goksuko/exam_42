@@ -1,23 +1,35 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   flood_fill.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:47:35 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:47:39 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <stdlib.h>
 
-typedef struct  s_point 
+typedef struct s_point
 {
-	int           x;
-	int           y;
-} t_point;
+	int	x;
+	int	y;
+}		t_point;
 
-void  flood_fill(char **tab, t_point size, t_point begin)
+void	flood_fill(char **tab, t_point size, t_point begin)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;
 	while (i < begin.y)
-			i++;
+		i++;
 	while (j < begin.x)
-			j++;
+		j++;
 	while (j < size.x)
 	{
 		tab[i][j] = 'F';
@@ -36,7 +48,6 @@ void  flood_fill(char **tab, t_point size, t_point begin)
 	}
 }
 
-
 // //main helper function
 // char** make_area(char** zone, t_point size)
 // {
@@ -51,7 +62,7 @@ void  flood_fill(char **tab, t_point size, t_point begin)
 // 		new[i][size.x] = '\0';
 // 	}
 
-// 	return new;
+// 	return (new);
 // }
 
 // int main(void)
@@ -82,11 +93,11 @@ void  flood_fill(char **tab, t_point size, t_point begin)
 // Allowed functions: -
 // --------------------------------------------------------------------------------
 
-// Write a function that takes a char ** as a 2-dimensional array of char, a 
+// Write a function that takes a char ** as a 2-dimensional array of char, a
 // t_point as the dimensions of this array and a t_point as the starting point.
 
-// Starting from the given 'begin' t_point, this function fills an entire zone 
-// by replacing characters inside with the character 'F'. A zone is an group of 
+// Starting from the given 'begin' t_point, this function fills an entire zone
+// by replacing characters inside with the character 'F'. A zone is an group of
 // the same character delimitated horizontally and vertically by other characters
 // or the array boundry.
 
@@ -122,7 +133,7 @@ void  flood_fill(char **tab, t_point size, t_point begin)
 // 		new[i][size.x] = '\0';
 // 	}
 
-// 	return new;
+// 	return (new);
 // }
 
 // int main(void)
@@ -160,4 +171,4 @@ void  flood_fill(char **tab, t_point size, t_point begin)
 // F00F000F
 // F0FF000F
 // FFF0000F
-// $> 
+// $>

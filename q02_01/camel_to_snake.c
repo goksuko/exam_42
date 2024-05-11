@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   camel_to_snake.c                                   :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:43:31 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:43:33 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
+
 // #include <stdlib.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int i;
-	char *org;
-	char c;
+	int		i;
+	char	*org;
+	char	c;
 
 	i = 0;
 	org = argv[1];
@@ -13,7 +26,7 @@ int main(int argc, char *argv[])
 	{
 		while (org[i])
 		{
-			if(org[i] >= 'a' && org[i] <= 'z')
+			if (org[i] >= 'a' && org[i] <= 'z')
 				write(1, &org[i], 1);
 			if (org[i] >= 'A' && org[i] <= 'Z')
 			{
@@ -31,15 +44,18 @@ int main(int argc, char *argv[])
 // // Assignment name  : camel_to_snake
 // // Expected files   : camel_to_snake.c
 // // Allowed functions: malloc, free, realloc, write
-// // --------------------------------------------------------------------------------
+//
+	// --------------------------------------------------------------------------------
 
 // // Write a program that takes a single string in lowerCamelCase format
 // // and converts it into a string in snake_case format.
 
-// // A lowerCamelCase string is a string where each word begins with a capital letter
+//
+	// A lowerCamelCase string is a string where each word begins with a capital letter
 // // except for the first one.
 
-// // A snake_case string is a string where each word is in lower case, separated by
+// // A snake_case string is a string where each word is in lower case,
+	separated by
 // // an underscore "_".
 
 // // Examples:

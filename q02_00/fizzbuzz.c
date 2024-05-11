@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   fizzbuzz.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:44 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:45:46 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 int	main(void)
 {
-	int	i;
+	int i;
 	int j;
 	char c;
 
@@ -10,23 +22,23 @@ int	main(void)
 	while (i <= 100)
 	{
 		if (i % 15 == 0)
-			write(1, "fizzbuzz\n", 9);		
+			write(1, "fizzbuzz\n", 9);
 		else if (i % 3 == 0)
-			write (1, "fizz\n", 5);
+			write(1, "fizz\n", 5);
 		else if (i % 5 == 0)
-			write (1, "buzz\n", 5);
-		else 
+			write(1, "buzz\n", 5);
+		else
 		{
 			if (i / 10 > 0)
 			{
 				j = (i / 10) + 48;
 				c = (char)j;
-				write (1, &c, 1);
+				write(1, &c, 1);
 			}
 			j = (i % 10) + 48;
 			c = (char)j;
-			write (1, &c, 1);		
-			write (1, "\n", 1);
+			write(1, &c, 1);
+			write(1, "\n", 1);
 		}
 		i++;
 	}

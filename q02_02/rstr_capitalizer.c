@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   rstr_capitalizer.c                                 :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:08 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:45:10 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	char *str;
-	int i;
-	int j;
-	
+	char	*str;
+	int		i;
+	int		j;
+
 	j = 1;
 	if (argc >= 2)
 	{
@@ -15,16 +27,17 @@ int main(int argc, char *argv[])
 			i = 0;
 			while (str[i] != '\0')
 			{
-				while (str[i + 1] != ' ' && str[i + 1] != '\t' && str[i + 1] != '\0' )
+				while (str[i + 1] != ' ' && str[i + 1] != '\t' && str[i
+					+ 1] != '\0')
 				{
-					if (str[i] >= 'A' && str[i] <= 'Z' )
+					if (str[i] >= 'A' && str[i] <= 'Z')
 						str[i] = str[i] + 32;
 					write(1, &str[i], 1);
 					i++;
 				}
 				if (str[i + 1] == ' ' || str[i + 1] == '\t')
 				{
-					if (str[i] >= 'a' && str[i] <= 'z' )
+					if (str[i] >= 'a' && str[i] <= 'z')
 						str[i] = str[i] - 32;
 					write(1, &str[i], 1);
 					write(1, &str[i + 1], 1);
@@ -32,7 +45,7 @@ int main(int argc, char *argv[])
 				}
 				else if (str[i + 1] == '\0')
 				{
-					if (str[i] >= 'a' && str[i] <= 'z' )
+					if (str[i] >= 'a' && str[i] <= 'z')
 						str[i] = str[i] - 32;
 					write(1, &str[i], 1);
 					write(1, "\n", 1);
@@ -42,7 +55,7 @@ int main(int argc, char *argv[])
 			j++;
 		}
 	}
-	else 
+	else
 		write(1, "\n", 1);
 	return (0);
 }
@@ -52,7 +65,7 @@ int main(int argc, char *argv[])
 // Allowed functions: write
 // --------------------------------------------------------------------------------
 
-// Write a program that takes one or more strings and, for each argument, puts 
+// Write a program that takes one or more strings and, for each argument, puts
 // the last character that is a letter of each word in uppercase and the rest
 // in lowercase, then displays the result followed by a \n.
 
@@ -69,7 +82,8 @@ int main(int argc, char *argv[])
 // $
 // $> ./rstr_capitalizer "a FiRSt LiTTlE TESt" | cat -e
 // A firsT littlE tesT$
-// $> ./rstr_capitalizer "SecONd teST A LITtle BiT   Moar comPLEX" "   But... This iS not THAT COMPLEX" "     Okay, this is the last 1239809147801 but not    the least    t" | cat -e
+// $> ./rstr_capitalizer "SecONd teST A LITtle BiT   Moar comPLEX" "   But... This iS not THAT COMPLEX" "     Okay,
+	this is the last 1239809147801 but not    the least    t" | cat -e
 // seconD tesT A littlE biT   moaR compleX$
 //    but... thiS iS noT thaT compleX$
 //      okay, thiS iS thE lasT 1239809147801 buT noT    thE leasT    T$

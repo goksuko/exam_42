@@ -1,36 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcpy.c                                        :+:    :+:            */
+/*   ft_strrev.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/05/11 22:45:50 by akaya-oz      #+#    #+#                 */
-/*   Updated: 2024/05/11 22:45:51 by akaya-oz      ########   odam.nl         */
+/*   Created: 2024/05/11 22:43:07 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:43:09 by akaya-oz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *s1, char *s2)
+#include <stdio.h>
+
+char	*ft_strrev(char *str)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	temp;
 
 	i = 0;
-	while (s2[i])
-	{
-		s1[i] = s2[i];
+	j = 0;
+	while (str[i])
 		i++;
+	i--;
+	while (i >= j)
+	{
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+		j++;
+		i--;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (str);
 }
 
-// Assignment name  : ft_strcpy
-// Expected files   : ft_strcpy.c
+int	main(void)
+{
+	char	str[] = "Hello";
+
+	printf("%s\n", ft_strrev(str));
+	return (0);
+}
+
+// Assignment name  : ft_strrev
+// Expected files   : ft_strrev.c
 // Allowed functions:
 // --------------------------------------------------------------------------------
 
-// Reproduce the behavior of the function strcpy (man strcpy).
+// Write a function that reverses (in-place) a string.
+
+// It must return its parameter.
 
 // Your function must be declared as follows:
 
-// char    *ft_strcpy(char *s1, char *s2);
+// char    *ft_strrev(char *str);

@@ -1,15 +1,27 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_itoa.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:47:19 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:47:20 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
+#include <unistd.h>
 
 char	*ft_itoa(int nbr)
 {
-	char *str;
-	int sign;
-	int	count;
-	int i;
-	int copy;
+	char	*str;
+	int		sign;
+	int		count;
+	int		i;
+	int		copy;
 
 	sign = 1;
 	count = 1;
@@ -20,7 +32,7 @@ char	*ft_itoa(int nbr)
 		count++;
 	}
 	copy = nbr;
-	while (nbr >=10)
+	while (nbr >= 10)
 	{
 		nbr = nbr / 10;
 		count++;
@@ -44,7 +56,7 @@ char	*ft_itoa(int nbr)
 	return (str);
 }
 
-// int	main()
+// int	main(void)
 // {
 // 	char *s;
 

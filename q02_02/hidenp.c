@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   hidenp.c                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:44:51 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:44:53 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int	main (int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int i;
-	int j;
-	char *s1;
-	char *s2;
-	
+	int		i;
+	int		j;
+	char	*s1;
+	char	*s2;
+
 	if (argc == 3)
 	{
 		s1 = argv[1];
@@ -20,14 +32,13 @@ int	main (int argc, char *argv[])
 			j++;
 		}
 		if (s1[i] == '\0')
-			write(1, "1",1 );
+			write(1, "1", 1);
 		else
-			write(1, "0",1 );
+			write(1, "0", 1);
 	}
-	write(1, "\n",1 );
+	write(1, "\n", 1);
 	return (0);
 }
-
 
 // Assignment name  : hidenp
 // Expected files   : hidenp.c

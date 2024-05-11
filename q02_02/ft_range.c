@@ -1,11 +1,23 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_range.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:44:44 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:44:46 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-int     *ft_range(int start, int end)
+#include <stdio.h>
+#include <stdlib.h>
+
+int	*ft_range(int start, int end)
 {
 	int	total;
-	int *array;
-	int i;
+	int	*array;
+	int	i;
 
 	total = end - start;
 	if (total < 0)
@@ -63,7 +75,8 @@ int     *ft_range(int start, int end)
 
 // int     *ft_range(int start, int end);
 
-// It must allocate (with malloc()) an array of integers, fill it with consecutive
+// It must allocate (with malloc()) an array of integers,
+	fill it with consecutive
 // values that begin at start and end at end (Including start and end !), then
 // return a pointer to the first value of the array.
 

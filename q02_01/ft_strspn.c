@@ -1,60 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcspn.c                                       :+:    :+:            */
+/*   ft_strspn.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/05/11 22:43:17 by akaya-oz      #+#    #+#                 */
-/*   Updated: 2024/05/11 22:43:19 by akaya-oz      ########   odam.nl         */
+/*   Created: 2024/05/11 22:43:04 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:43:06 by akaya-oz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strcspn(const char *s, const char *reject)
+size_t	ft_strspn(const char *s, const char *accept)
 {
-	int	i;
-	int	k;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	k = 0;
 	while (s[i])
 	{
-		while (reject[k])
+		j = 0;
+		while (accept[j])
 		{
-			if (s[i] == reject[k])
-				return (i);
-			k++;
+			if (s[i] == accept[j])
+				break ;
+			j++;
 		}
+		if (!accept[j])
+			break ;
 		i++;
-		k = 0;
 	}
 	return (i);
 }
 
-// int	main(void)
-// {
-// 	char *str1 = "Adanaya";
-// 	// char *str2 = "aya";
-// 	// char	*str2 = "ne";
-// 	char	*str2 = "f";
-// 	// char	*str2 = "en";
+int	main(void)
+{
+	char	s[] = "Hello World";
+	char	accept[] = "Helo ";
 
-// 	printf("my: %ld\n", ft_strcspn(str1, str2));
-// 	printf("org: %ld\n", strcspn(str1, str2));
-// 	return (0);
-// }
+	printf("org: %lu\n", strspn(s, accept));
+	printf(" my: %lu\n", ft_strspn(s, accept));
+	return (0);
+}
 
-// Assignment name	: ft_strcspn
-// Expected files	: ft_strcspn.c
+// Assignment name	: ft_strspn
+// Expected files	: ft_strspn.c
 // Allowed functions: None
 // ---------------------------------------------------------------
 
-// Reproduce exactly the behavior of the function strcspn
-// (man strcspn).
+// Reproduce exactly the behavior of the strspn function
+// (man strspn).
 
 // The function should be prototyped as follows:
 
-// size_t	ft_strcspn(const char *s, const char *reject);
+// size_t	ft_strspn(const char *s, const char *accept);

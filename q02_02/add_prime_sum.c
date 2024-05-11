@@ -1,10 +1,22 @@
-#include <unistd.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   add_prime_sum.c                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:44:26 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:44:28 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-int take_num(char *str)
+#include <stdio.h>
+#include <unistd.h>
+
+int	take_num(char *str)
 {
-	int i;
-	int num;
+	int	i;
+	int	num;
 
 	i = 0;
 	num = 0;
@@ -24,7 +36,7 @@ int	is_prime(int num)
 	if (num <= 1)
 		return (0);
 	if (num % 2 == 0 && num > 2)
-		return(0);
+		return (0);
 	while (i < (num / 2))
 	{
 		if (num % i == 0)
@@ -37,7 +49,7 @@ int	is_prime(int num)
 
 void	print_num(int num)
 {
-	char c;
+	char	c;
 
 	if (num >= 10)
 		print_num(num / 10);
@@ -45,7 +57,7 @@ void	print_num(int num)
 	write(1, &c, 1);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int	num;
 	int	total;
@@ -82,7 +94,6 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-
 // Assignment name  : add_prime_sum
 // Expected files   : add_prime_sum.c
 // Allowed functions: write, exit
@@ -91,7 +102,8 @@ int main(int argc, char *argv[])
 // Write a program that takes a positive integer as argument and displays the sum
 // of all prime numbers inferior or equal to it followed by a newline.
 
-// If the number of arguments is not 1, or the argument is not a positive number,
+// If the number of arguments is not 1,
+	or the argument is not a positive number,
 // just display 0 followed by a newline.
 
 // Yes, the examples are right.

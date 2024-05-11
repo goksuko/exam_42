@@ -1,5 +1,17 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   alpha_mirror.c                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:38:41 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:38:52 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <unistd.h>
 
 int	main(int argc, char *argv[])
 {
@@ -16,17 +28,13 @@ int	main(int argc, char *argv[])
 				str[i] = 'a' + 'z' - str[i];
 			else if (str[i] >= 'A' && str[i] <= 'Z')
 				str[i] = 'A' + 'Z' - str[i];
-			write (1, &str[i], 1);
+			write(1, &str[i], 1);
 			i++;
 		}
 	}
-	write (1, "\n", 1);
+	write(1, "\n", 1);
 	return (0);
 }
-
-
-
-
 
 // Assignment name  : alpha_mirror
 // Expected files   : alpha_mirror.c

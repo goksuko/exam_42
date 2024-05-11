@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_atoi_base.c                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:44:37 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:44:38 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 int	ft_atoi_base(const char *str, int str_base)
@@ -7,7 +19,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	int		nb;
 	char	*digits;
 	char	*digits2;
-	int	j;
+	int		j;
 
 	nb = 0;
 	i = 0;
@@ -42,7 +54,9 @@ int	ft_atoi_base(const char *str, int str_base)
 
 // int main()
 // {
-// 	printf("%d\n", ft_atoi_base("Ceci permet de decouvrir le fonctionnement de ton ft_atoi_base", 16));
+// 	printf("%d\n",
+		ft_atoi_base("Ceci permet de decouvrir le fonctionnement de ton ft_atoi_base",
+			16));
 // 	return (0);
 // }
 

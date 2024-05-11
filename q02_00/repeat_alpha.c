@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   repeat_alpha.c                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:59 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:46:00 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	char c;
-	int n;
-	char *str;
-	int i;
+	char	c;
+	int		n;
+	char	*str;
+	int		i;
 
 	i = 0;
 	if (argc == 2)
@@ -34,7 +46,6 @@ int main(int argc, char *argv[])
 	write(1, "\n", 1);
 	return (0);
 }
-
 
 // Assignment name  : repeat_alpha
 // Expected files   : repeat_alpha.c

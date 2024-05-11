@@ -1,11 +1,23 @@
-#include <unistd.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   union.c                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:42:36 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:42:37 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(int argc, char *argv[])
+#include <stdio.h>
+#include <unistd.h>
+
+int	main(int argc, char *argv[])
 {
-	int array[255] = {0};
-	int i;
-	int j;
+	int	array[255] = {0};
+	int	i;
+	int	j;
 
 	i = 1;
 	if (argc == 3)
@@ -28,8 +40,6 @@ int main(int argc, char *argv[])
 	write(1, "\n", 1);
 	return (0);
 }
-
-
 
 // Assignment name  : union
 // Expected files   : union.c

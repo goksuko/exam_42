@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   print_bits.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:42:48 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:42:49 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 
@@ -20,7 +32,7 @@
 // 	}
 // }
 
-// also this 
+// also this
 // void print_bits(unsigned char octet)
 // {
 // 	int	i;

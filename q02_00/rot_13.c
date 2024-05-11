@@ -1,22 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   rot_13.c                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:46:37 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:46:38 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	char *str;
-	int i;
-	
+	char	*str;
+	int		i;
+
 	if (argc == 2)
 	{
 		str = argv[1];
 		i = 0;
 		while (str[i])
 		{
-			if (str[i] >= 'a' && str[i] <= 'm' || str[i] >= 'A' && str[i] <= 'M' )
+			if (str[i] >= 'a' && str[i] <= 'm' || str[i] >= 'A'
+				&& str[i] <= 'M')
 				str[i] = str[i] + 13;
-			else if (str[i] >= 'n' && str[i] <= 'z' || str[i] >= 'N' && str[i] <= 'Z' )
+			else if (str[i] >= 'n' && str[i] <= 'z' || str[i] >= 'N'
+				&& str[i] <= 'Z')
 				str[i] = str[i] - 13;
 			write(1, &str[i], 1);
-			i++;			
+			i++;
 		}
 	}
 	write(1, "\n", 1);

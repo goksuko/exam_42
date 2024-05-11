@@ -1,9 +1,21 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strcmp.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:43:20 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:43:22 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-int    ft_strcmp(char *s1, char *s2)
+#include <stdio.h>
+#include <string.h>
+
+int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[i] == s2[i] && s1 && s2)
@@ -11,8 +23,7 @@ int    ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-
-// int	main()
+// int	main(void)
 // {
 // 	char *str1 = "Adana";
 // 	char *str2 = "Ankara";

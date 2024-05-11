@@ -1,11 +1,23 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <limits.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   tab_mult.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:16 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:45:20 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_atoi(char *str)
+#include <limits.h>
+#include <stdio.h>
+#include <unistd.h>
+
+int	ft_atoi(char *str)
 {
-	int nb;
-	int i;
+	int	nb;
+	int	i;
 
 	nb = 0;
 	i = 0;
@@ -17,10 +29,10 @@ int ft_atoi(char *str)
 	return (nb);
 }
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-	char c;
-	
+	char	c;
+
 	if (nb > 9)
 		ft_putnbr(nb / 10);
 	c = (nb % 10) + '0';
@@ -30,19 +42,19 @@ void ft_putnbr(int nb)
 // int find_digit(char *str)
 // {
 // 	int	i;
-	
+
 // 	i = 0;
 // 	while (str[i])
 // 		i++;
 // 	return (i);
 // }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int	nb;
-	char *str;
-	char letter;
-	int nine;
+	int		nb;
+	char	*str;
+	char	letter;
+	int		nine;
 
 	if (argc == 2)
 	{
@@ -76,7 +88,6 @@ int main(int argc, char *argv[])
 // 	ft_putnbr(12345);
 // 	return (0);
 // }
-
 
 // Assignment name  : tab_mult
 // Expected files   : tab_mult.c

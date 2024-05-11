@@ -1,10 +1,22 @@
-#include <unistd.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   inter.c                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:43:01 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:43:03 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(int argc, char *argv[])
+#include <stdio.h>
+#include <unistd.h>
+
+int	main(int argc, char *argv[])
 {
-	int array[255] = {0};
-	int i;
+	int		array[255] = {0};
+	int		i;
 	char	*first;
 	char	*second;
 
@@ -34,9 +46,6 @@ int main(int argc, char *argv[])
 	write(1, "\n", 1);
 	return (0);
 }
-
-
-
 
 // Assignment name  : inter
 // Expected files   : inter.c

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_swap.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/05/11 22:45:56 by akaya-oz      #+#    #+#                 */
+/*   Updated: 2024/05/11 22:46:11 by akaya-oz      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 // void	ft_swap(int *a, int *b)
@@ -9,7 +21,7 @@
 // 	b = temp;
 // }
 
-void    ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
 	int	temp;
 
@@ -36,11 +48,9 @@ int	main(void)
 	printf("\n");
 }
 
-
-
 // Assignment name  : ft_swap
 // Expected files   : ft_swap.c
-// Allowed functions: 
+// Allowed functions:
 // --------------------------------------------------------------------------------
 
 // Write a function that swaps the contents of two integers the adresses of which
