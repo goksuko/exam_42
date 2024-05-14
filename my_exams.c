@@ -1,13 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sinavlarim.c                                       :+:    :+:            */
+/*   my_exams.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/11 22:48:19 by akaya-oz      #+#    #+#                 */
-/*   Updated: 2024/05/11 22:48:21 by akaya-oz      ########   odam.nl         */
+/*   Updated: 2024/05/14 14:59:38 by akaya-oz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-Rank2 1. ft_strcpy 2. rotone 3. union 4. ft_range
+// Rank2 1. ft_strcpy 2. rotone 3. union 4. ft_range
