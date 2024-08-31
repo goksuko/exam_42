@@ -15,6 +15,7 @@ bool is_not_letter(char x)
     return true;
 }
 
+
 bool is_capital(char c)
 {
 	if (c >= 'A' && c <= 'Z')
