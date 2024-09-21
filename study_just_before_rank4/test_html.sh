@@ -1,4 +1,4 @@
-cc -Wall -Werror -Wextra html_validator.c -o html_validator
+cc -Wall -Werror -Wextra html_validator_from_exam.c -o html_validator
 ./html_validator '<b><blue></blue></b>'; echo $?
 echo above should be: 0
 
